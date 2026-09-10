@@ -44,7 +44,8 @@
   padding: 0;
 }
 
-html {
+html,
+html[data-scroll-behavior="smooth"] {
   scroll-behavior: smooth;
 }
 
