@@ -1,6 +1,6 @@
 # nextjs-testing-dc
 
-Web statis Next.js frontend dummy bertema wisata ("Wisata Nusantara") dengan tampilan modern Light Glassmorphism untuk kebutuhan testing sysadmin dan demo infrastruktur.
+Web statis Next.js frontend dummy bertema wisata ("Wisata Nusantara") dengan tampilan modern Light Glassmorphism untuk kebutuhan testing sysadmin dan demo aplikasi.
 
 ## Prasyarat System / Requirements
 
@@ -8,7 +8,6 @@ Sebelum menjalankan aplikasi, pastikan sistem Anda memenuhi kebutuhan berikut:
 
 - **Node.js**: Versi `18.18.0` ke atas (Direkomendasikan **Node.js v20.x** atau **v22.x**)
 - **NPM**: Versi `9.x` ke atas (bisa juga menggunakan `yarn` atau `pnpm`)
-- **Docker** *(Opsional)*: Untuk pengujian reverse proxy Nginx dalam container
 
 ## Fitur Aplikasi
 
