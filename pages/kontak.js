@@ -16,40 +16,39 @@ export default function ContactPage() {
   return (
     <Layout>
       <Head>
-        <title>Kontak & Dukungan | Wisata Nusantara</title>
-        <meta name="description" content="Hubungi tim Wisata Nusantara untuk kebutuhan demo sysadmin & testing." />
+        <title>Kontak & Bantuan | Wisata Nusantara</title>
+        <meta name="description" content="Hubungi tim Wisata Nusantara untuk masukan & pertanyaan." />
       </Head>
 
-      <section className="section-header animate-fade-in" style={{ marginTop: '16px' }}>
+      <section className="section-header animate-fade-in" style={{ marginTop: '16px', textAlign: 'center', justifyContent: 'center' }}>
         <div>
           <h2>Hubungi Kami</h2>
-          <p>Memiliki pertanyaan seputar pengujian sysadmin atau demo aplikasi? Kirimkan pesan Anda di bawah ini.</p>
+          <p>Memiliki pertanyaan, masukan, atau rekomendasi destinasi wisata? Kirimkan pesan Anda di bawah ini.</p>
         </div>
       </section>
 
-      <div className="contact-grid animate-fade-in">
-        {/* Contact Form */}
+      <div className="animate-fade-in" style={{ maxWidth: '680px', margin: '32px auto 0' }}>
         <div className="contact-card">
-          <h3 style={{ fontSize: '1.3rem', marginBottom: '20px' }}>Kirim Pesan</h3>
+          <h3 style={{ fontSize: '1.4rem', marginBottom: '24px', textAlign: 'center' }}>Kirim Pesan Anda</h3>
 
           {submitted ? (
             <div
               style={{
-                background: 'rgba(16, 185, 129, 0.15)',
-                border: '1px solid var(--emerald-400)',
+                background: '#ecfdf5',
+                border: '1px solid #a7f3d0',
                 borderRadius: 'var(--radius-md)',
-                padding: '20px',
-                color: 'var(--emerald-400)',
+                padding: '24px',
+                color: 'var(--emerald-700)',
                 textAlign: 'center'
               }}
             >
-              <h4 style={{ color: 'var(--emerald-400)', marginBottom: '8px' }}>✓ Pesan Terkirim!</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                Terima kasih <strong>{formData.name}</strong>. Pesan Anda telah diterima oleh simulasikan server.
+              <h4 style={{ color: 'var(--emerald-700)', marginBottom: '8px', fontSize: '1.2rem' }}>✓ Pesan Terkirim!</h4>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>
+                Terima kasih <strong>{formData.name}</strong>. Pesan Anda telah kami terima dan akan segera kami respon.
               </p>
               <button
                 className="btn btn-glass"
-                style={{ marginTop: '16px', fontSize: '0.85rem' }}
+                style={{ marginTop: '20px', fontSize: '0.88rem' }}
                 onClick={() => {
                   setSubmitted(false);
                   setFormData({ name: '', email: '', subject: '', message: '' });
@@ -65,7 +64,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   required
-                  placeholder="Masukkan nama anda"
+                  placeholder="Masukkan nama lengkap Anda"
                   className="form-input"
                   style={{ paddingLeft: '16px' }}
                   value={formData.name}
@@ -78,7 +77,7 @@ export default function ContactPage() {
                 <input
                   type="email"
                   required
-                  placeholder="admin@wisata-dummy.test"
+                  placeholder="nama@email.com"
                   className="form-input"
                   style={{ paddingLeft: '16px' }}
                   value={formData.email}
@@ -90,7 +89,7 @@ export default function ContactPage() {
                 <label className="form-label">Subjek</label>
                 <input
                   type="text"
-                  placeholder="Subjek pertanyaan"
+                  placeholder="Topik atau subjek pesan"
                   className="form-input"
                   style={{ paddingLeft: '16px' }}
                   value={formData.subject}
@@ -102,7 +101,7 @@ export default function ContactPage() {
                 <label className="form-label">Pesan</label>
                 <textarea
                   required
-                  placeholder="Tuliskan detail pertanyaan atau masukan anda..."
+                  placeholder="Tuliskan detail pesan, pertanyaan, atau saran Anda..."
                   className="form-input textarea-input"
                   style={{ paddingLeft: '16px' }}
                   value={formData.message}
@@ -110,61 +109,11 @@ export default function ContactPage() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+              <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '8px' }}>
                 Kirim Pesan Sekarang
               </button>
             </form>
           )}
-        </div>
-
-        {/* Info Sidebar */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <div className="contact-card">
-            <h3 style={{ fontSize: '1.2rem', marginBottom: '16px' }}>Info Kontak Demo</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div className="feature-icon" style={{ width: '40px', height: '40px', marginBottom: 0 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Email Official</div>
-                  <div style={{ fontWeight: 600 }}>admin@wisata-dummy.test</div>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div className="feature-icon" style={{ width: '40px', height: '40px', marginBottom: 0 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                  </svg>
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Server Proxy</div>
-                  <div style={{ fontWeight: 600 }}>Nginx Docker Container (Port 80)</div>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div className="feature-icon" style={{ width: '40px', height: '40px', marginBottom: 0 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Host Node</div>
-                  <div style={{ fontWeight: 600 }}>Next.js Dev Server (Port 3000)</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </Layout>
